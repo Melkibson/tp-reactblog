@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import img1 from "../../images/img1.jpg";
 import img2 from "../../images/img2.jpg";
@@ -8,9 +9,7 @@ import {getPosts} from "../../utils/requests";
 const Posts = () => {
     const path = "http://localhost:3001/posts";
     const [posts, setPosts] = React.useState([]);
-    const removePost = () => {
 
-    };
     const handleRemove = (id) => {
         const newPosts = posts.filter(post => post.id !== id);
         fetch(path + `/${id}`, {
@@ -43,6 +42,7 @@ const Posts = () => {
                                         <div className="d-flex justify-content-between align-items-center">
                                             <small className="text-muted">Publié le 31 Mai 2022</small>
                                             <button onClick={() => handleRemove(post.id)} className="btn btn-danger">Supprimer</button>
+                                            <Link to={`/posts/${post.id}`} className="btn btn-primary">Lire l'article</Link>
                                         </div>
                                     </div>
                                 </div>

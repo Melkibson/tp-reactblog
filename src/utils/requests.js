@@ -1,6 +1,6 @@
 export const getPosts = (setPosts, path) => {
     fetch(path, {
-        method: "Get",
+        method: "GET",
         headers: {
             "Content-Type": "application/json"
         },
