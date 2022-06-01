@@ -10,14 +10,16 @@ const Post = () => {
         getPosts(setPost, path);
     }, [])
   return (
-    <div className="container">
-      <h1>{post.title}</h1>
-        <div className="col-12">
-            <div className="container">
+    <div className="container pt-5 d-flex flex-column align-items-center">
+      <h1 className="mb-5">{post.title}</h1>
+        <div className="col-6">
+            <div className="row mb-3">
                 {post.content}
             </div>
-            <p className="text-muted">{post.author}</p>
-            <small className="text-muted">Genre: {post.genre}</small>
+            <div className="row">
+                <span className="text-muted d-block">{post.author}</span>
+                <small className="text-muted">Genre: {post.genre}</small>
+            </div>
         </div>
         <div className="col pt-5 pb-3">
             <Link to="/posts" className="btn btn-outline-primary">Tous les articles</Link>
