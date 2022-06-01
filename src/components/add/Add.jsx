@@ -7,7 +7,7 @@ const Add = () => {
   const [genre, setGenre] = useState("")
   const [content, setContent] = useState("");
   const [article, setArticle] = useState([]);
-
+  const published = new Date().toLocaleString("fr-FR", {month: "long", day:"numeric", year:"numeric"} );
   const handlePostTitle = (title) => {
     if(title === title) {
       alert("Le titre est déjà pris");
@@ -48,7 +48,8 @@ const Add = () => {
         title,
         author,
         genre,
-        content
+        content,
+        published
       })
     })
         .then(res => res.json())

@@ -40,7 +40,7 @@ const Posts = () => {
                                         <h5 className="card-title">{post.title}</h5>
                                         <p className="card-text">{post.content}</p>
                                         <div className="d-flex justify-content-between align-items-center">
-                                            <small className="text-muted">Publié le 31 Mai 2022</small>
+                                            <small className="text-muted">Publié le {post.published}</small>
                                             <button onClick={() => handleRemove(post.id)} className="btn btn-danger">Supprimer</button>
                                             <Link to={`/posts/${post.id}`} className="btn btn-primary">Lire l'article</Link>
                                         </div>
