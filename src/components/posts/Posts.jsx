@@ -8,8 +8,20 @@ import {getPosts} from "../../utils/requests";
 const Posts = () => {
     const path = "http://localhost:3001/posts";
     const [posts, setPosts] = React.useState([]);
+    const removePost = () => {
+
+    };
     const handleRemove = (id) => {
         const newPosts = posts.filter(post => post.id !== id);
+        fetch(path + `/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+            .then(res => res.json())
+            .catch(err => console.log(err));
+
         setPosts(newPosts);
     };
     useEffect(() => {

@@ -14,6 +14,7 @@ const Add = () => {
       return false;
     } else return true;
   };
+
   const path = "http://localhost:3001/posts";
   const genreOptions = [
     {
