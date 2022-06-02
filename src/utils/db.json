@@ -40,5 +40,16 @@
       "published": "1 juin 2022",
       "id": 5
     }
-  ]
-}
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "email": "user@gmail.com",
+      "password": "userpassword"
+    }
+  ]}

@@ -8,6 +8,7 @@ import ProfilePage from "./pages/ProfilePage";
 import Navigation from "./components/navigation/Navigation";
 import AddPage from "./pages/AddPage";
 import Post from "./components/post/Post";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                        <Route path="/posts" element={<PostsPage/>} />
                        <Route path="/about" element={<About/>} />
                        <Route path="/profile" element={<ProfilePage/>} />
+                       <Route path="/login" element={<LoginPage/>} />
                        <Route path="/add" element={<AddPage/>} />
                        <Route path="/posts/:id" element={<Post/>} />
                    </Fragment>
