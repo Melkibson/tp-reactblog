@@ -1,11 +1,9 @@
-import React from "react";
-import Profile from "../components/profile/Profile";
+import Auth from "../components/auth/Auth";
 
 const ProfilePage = () => {
-
-    return (
-       <Profile/>
-    )
+  return(
+      <Auth/>
+  )
 }
 
 export default ProfilePage;

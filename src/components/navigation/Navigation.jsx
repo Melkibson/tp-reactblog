@@ -9,7 +9,6 @@ const Navigation = () => {
             <Link to="/posts">Articles</Link>
             <Link to="/about">A propos</Link>
             <Link to="/profile">Profil</Link>
-            <Link to="/login">Connexion</Link>
             <Link to="/add">Ajouter un article</Link>
         </div>
     )

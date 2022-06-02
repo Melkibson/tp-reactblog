@@ -2,6 +2,7 @@ import {useState} from "react";
 
 const Register = () => {
     const [users, setUsers] = useState([]);
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -14,7 +15,7 @@ const Register = () => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({email, password})
+            body: JSON.stringify({username, email, password})
         })
             .then(res => res.json())
             .then(data => setUsers(users.concat(data)))
@@ -28,6 +29,7 @@ const Register = () => {
             postUser();
             setEmail('')
             setPassword('')
+            alert("Inscription confirmée");
         } else {
             alert("Passwords do not match");
         }
@@ -37,6 +39,10 @@ const Register = () => {
       <div className="container">
           <h1>S'inscrire</h1>
           <form>
+              <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">Pseudo</label>
+                  <input onChange={e => setUsername(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+              </div>
               <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                   <input onChange={e => setEmail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
