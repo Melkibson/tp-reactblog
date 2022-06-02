@@ -1,21 +1,8 @@
 import {useEffect, useState} from "react";
 import {getUsers} from "../../utils/requests";
 
-const Login = () => {
-  const [isLogged, setIsLogged] = useState(false);
-  const [users, setUsers] = useState([]);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({setEmail, setPassword, handleSubmit}) => {
 
-  const path = "http://localhost:3001/users";
-  useEffect(() => {
-    getUsers(setUsers, path);
-  }, []);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const user = users.find(user => user.email === email && user.password === password)
-    setIsLogged(user);
-  };
   return(
       <div className="container">
         <h1>Se connecter</h1>

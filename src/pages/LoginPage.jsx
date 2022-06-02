@@ -1,5 +1,5 @@
-import Login from "../components/auth/Login";
 import {Fragment, useState} from "react";
+import Auth from "../components/auth/Auth";
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,7 +11,7 @@ const LoginPage = () => {
               <button className="btn btn-primary">S'inscrire</button>
             </div>
         </div>
-        <Login/>
+        <Auth/>
       </Fragment>
 
   )
