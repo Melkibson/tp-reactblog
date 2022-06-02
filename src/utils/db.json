@@ -51,5 +51,11 @@
       "id": 2,
       "email": "user@gmail.com",
       "password": "userpassword"
+    },
+    {
+      "email": "yamna",
+      "password": "yamna",
+      "id": 3
     }
-  ]}
+  ]
+}

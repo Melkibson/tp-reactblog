@@ -6,25 +6,6 @@ const Profile = () => {
     return (
         <div className="container">
             <h1>Profile</h1>
-            <div className="row">
-                <form className="divForm" onSubmit={handleSubmit}>
-                    <label></label>
-                    <input
-                        type="text"
-                        className="input"
-                        value={title}
-                        onChange={e => setTitle(e.target.value)}/>
-                    <label>Auteur</label>
-                    <input
-                        type="text"
-                        className="input"
-                        value={author}
-                        onChange={e => setAuthor(e.target.value)}/>
-                    <button
-                        type="submit"
-                        onClick={handleSubmit}>Ajouter</button>
-                </form>
-            </div>
         </div>
     )
 }
