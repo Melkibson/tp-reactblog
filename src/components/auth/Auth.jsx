@@ -48,7 +48,7 @@ const Auth = () => {
                     {!isLogin ? <Register/> :  <Login handleSubmit={handleSubmit} setUsername={setUsername} setPassword={setPassword}/>}
                 </Fragment>
                 :<Fragment>
-                    <Profile/>
+                    <Profile isLogged={isLogged} setIsLogged={setIsLogged}/>
                     <h2>Bienvenue {isLogged.username}</h2>
                 </Fragment>}
         </Fragment>
