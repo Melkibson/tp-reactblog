@@ -1,8 +1,9 @@
 import Auth from "../components/auth/Auth";
+import Profile from "../components/profile/Profile";
 
 const ProfilePage = () => {
   return(
-      <Auth/>
+      <Profile/>
   )
 }
 

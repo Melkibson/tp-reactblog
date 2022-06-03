@@ -12,6 +12,8 @@ const Auth = () => {
     const [password, setPassword] = useState("");
 
     const [isLogin, setIsLogin] = useState(true);
+    const user = users.find(user => user.username === username && user.password === password)
+
     const handleRegisterClick = (e) => {
         if(e.target.id === "register") {
             setIsLogin(false);
@@ -27,9 +29,10 @@ const Auth = () => {
     useEffect(() => {
         getUsers(setUsers, path);
     }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const user = users.find(user => user.username === username && user.password === password)
+        localStorage.setItem("isLogged", user);
         if (user) {
             setIsLogged(user);
         }

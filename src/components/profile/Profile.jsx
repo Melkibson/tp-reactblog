@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import img4 from "../../images/img4.jpg";
+
 const Profile = ({isLogged, setIsLogged}) => {
 
     return (
