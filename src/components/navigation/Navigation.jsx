@@ -1,13 +1,10 @@
-import React, {useContext, useEffect} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Navigation = () => {
-    const navigate = useNavigate();
     const isLogged = localStorage.getItem("isLogged");
 console.log(isLogged);
     const handleIsLoggedOut = () => {
         localStorage.setItem("isLogged", "false");
-        navigate("/login");
 
     }
 
