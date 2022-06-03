@@ -9,7 +9,7 @@ const Login = ({setUsername, setPassword, handleSubmit}) => {
         <form>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Pseudo</label>
-            <input onChange={e => setUsername(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+            <input onChange={e => setUsername(e.target.value)} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">Mot de passe</label>
