@@ -3,15 +3,16 @@ import {getUsers} from "../../utils/requests";
 import Login from "./Login";
 import {Fragment} from "react";
 import Register from "./Register";
+import {useNavigate} from "react-router-dom";
 
 const Auth = () => {
-    const [isLogged, setIsLogged] = useState(false);
-    const [users, setUsers] = useState([]);
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [isLogged, setIsLogged] = useState(false)
+    const [users, setUsers] = useState([])
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const navigate = useNavigate()
     localStorage.setItem("isLogged", "false");
-    const logged = localStorage.getItem("isLogged");
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(true)
     const handleRegisterClick = (e) => {
         if(e.target.id === "register") {
             setIsLogin(false);
@@ -24,18 +25,20 @@ const Auth = () => {
     }
     const handleIsLogged = (isLogged) => {
         if (isLogged) {
-            localStorage.setItem("isLogged", "true");
+            localStorage.setItem("isLogged", "true")
+            navigate("/profile")
+
         }
     }
     useEffect(() => {
     }, [])
 
-    const path = "http://localhost:3001/users";
+    const path = "http://localhost:3001/users"
     useEffect(() => {
         getUsers(setUsers, path);
-        handleIsLogged(isLogged);
-    }, [isLogged]);
+    }, []);
     const handleSubmit = (e) => {
+        e.preventDefault();
         const user = users.find(user => user.username === username && user.password === password)
         if(user) {
             setIsLogged(true);

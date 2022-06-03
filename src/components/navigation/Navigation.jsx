@@ -1,15 +1,14 @@
 import React, {useContext, useEffect} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Navigation = () => {
+    const navigate = useNavigate();
     const isLogged = localStorage.getItem("isLogged");
-    const handleIsLoggedIn = () => {
-        localStorage.setItem("isLogged", "true");
-    }
-
+console.log(isLogged);
     const handleIsLoggedOut = () => {
         localStorage.setItem("isLogged", "false");
-        window.location.reload();
+        navigate("/login");
+
     }
 
     return (
@@ -18,8 +17,8 @@ const Navigation = () => {
             <Link to="/posts">Articles</Link>
             <Link to="/about">A propos</Link>
             {isLogged === "true"? <Link to="/profile">Profile</Link> : ""}
-            {isLogged === "false"? <Link to="/login" onClick={handleIsLoggedIn}>Connexion</Link> :""}
-            {isLogged === "true"? <Link to="/" onClick={handleIsLoggedOut}>Déconnexion</Link> :""}
+            {isLogged === "false"? <Link to="/login">Connexion</Link> :""}
+            {isLogged === "true"? <Link to="/login" onClick={handleIsLoggedOut}>Déconnexion</Link> :""}
             <Link to="/add">Ajouter un article</Link>
         </div>
     )
